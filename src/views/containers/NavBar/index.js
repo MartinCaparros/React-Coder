@@ -1,7 +1,8 @@
 import React from 'react';
 import { Container, ListItem, Dropdown, DropdownList, ListLink } from './styled';
+import { CartWidget } from 'views/containers'
 
-const NavBar = () => {
+const NavBar = ({greeting}) => {
     return (    
         <Container>
             <ListItem>
@@ -13,11 +14,12 @@ const NavBar = () => {
                 </Dropdown>
             </ListItem>
             <ListItem>
-                <ListLink href="#">Ingresar</ListLink>
+                <ListLink href="#">{greeting}</ListLink>
             </ListItem>
             <ListItem>
                 <ListLink href="#">Ayuda</ListLink>
             </ListItem>
+            <CartWidget></CartWidget>
         </Container>
     );
 };

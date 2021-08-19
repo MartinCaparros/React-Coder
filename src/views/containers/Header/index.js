@@ -5,7 +5,7 @@ import React from 'react';
 const Header = () => {
     return(
         <Container>
-            <NavBar>
+            <NavBar greeting="Usuario">
 
             </NavBar>
         </Container>

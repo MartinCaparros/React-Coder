@@ -1,6 +1,7 @@
 import { Container } from './styled'
 import React from 'react'
 import {
+    MainSection,
     Header
 } from 'views/containers';
 
@@ -11,6 +12,9 @@ const Layout = () => {
             <Container>
 
             </Container>
+            <MainSection>
+                
+            </MainSection>
         </div>       
     );
 }
