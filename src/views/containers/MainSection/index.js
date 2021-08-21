@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Card, ItemImage, ItemName, Divider } from './styled';
+import { ItemCount } from 'views/components';
 
 const MainSection = () => {
     return (
@@ -9,6 +10,7 @@ const MainSection = () => {
                 <Divider>
                     <ItemName>ItemName</ItemName>
                 </Divider>
+                <ItemCount></ItemCount>
             </Card>
         </Container>
     )
