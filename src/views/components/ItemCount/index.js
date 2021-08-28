@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import { Container, Button, QuantityDiv} from './styled'
+import { Container, Button, QuantityDiv, Card, ItemImage, ItemName, Divider } from './styled'
 
-const ItemCount = () => {
-    const stock = 5;
+const ItemCount = ({id,title,description,price,pictureUrl}) => {
+    let stock = 15;
     const [count, setCount] = useState(0)
 
     const add = () => {
@@ -17,9 +17,15 @@ const ItemCount = () => {
 
     return (
         <Container>
-            <Button onClick={substract}>-</Button>
-            <QuantityDiv>{count}</QuantityDiv>
-            <Button onClick={add}>+</Button>
+            <Card>
+                <ItemImage/>
+                <Divider>
+                    <ItemName>{title}</ItemName>
+                </Divider>
+                <Button onClick={substract}>-</Button>
+                <QuantityDiv>{count}</QuantityDiv>
+                <Button onClick={add}>+</Button>
+            </Card>
         </Container>
     )
 };
