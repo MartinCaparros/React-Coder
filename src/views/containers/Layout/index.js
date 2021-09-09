@@ -1,5 +1,5 @@
-import { Container } from './styled'
-import React from 'react'
+import { Container } from './styled';
+import React from 'react';
 import {
     MainSection,
     Header
@@ -10,11 +10,8 @@ const Layout = () => {
         <div>
             <Header/>
             <Container>
-
             </Container>
-            <MainSection>
-                
-            </MainSection>
+            <MainSection/>
         </div>       
     );
 }

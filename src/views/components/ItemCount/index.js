@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import { Container, Button, QuantityDiv, Card, ItemImage, ItemName, Divider } from './styled'
+import { Container, Button, QuantityDiv, Card, ItemImage, ItemName, Divider, Divider2 } from './styled'
 
-const ItemCount = ({id,title,description,price,pictureUrl}) => {
+const ItemCount = ({item}) => {
     let stock = 15;
     const [count, setCount] = useState(0)
 
@@ -20,11 +20,13 @@ const ItemCount = ({id,title,description,price,pictureUrl}) => {
             <Card>
                 <ItemImage/>
                 <Divider>
-                    <ItemName>{title}</ItemName>
+                    <ItemName>{item.title}</ItemName>
                 </Divider>
-                <Button onClick={substract}>-</Button>
-                <QuantityDiv>{count}</QuantityDiv>
-                <Button onClick={add}>+</Button>
+                <Divider2>
+                    <Button onClick={substract}>-</Button>
+                    <QuantityDiv>{count}</QuantityDiv>
+                    <Button onClick={add}>+</Button>
+                </Divider2>
             </Card>
         </Container>
     )

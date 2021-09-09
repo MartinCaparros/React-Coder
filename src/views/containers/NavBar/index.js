@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, ListItem, Dropdown, DropdownList, ListLink } from './styled';
 import { CartWidget } from 'views/containers'
+import { Link } from 'react-router-dom';
 
 const NavBar = ({greeting}) => {
     return (    
@@ -8,9 +9,8 @@ const NavBar = ({greeting}) => {
             <ListItem>
                 <ListLink href="#">Categorias</ListLink>
                 <Dropdown>
-                    <DropdownList>Mujeres</DropdownList>
-                    <DropdownList>Hombres</DropdownList>
-                    <DropdownList>Niños</DropdownList>
+                    <DropdownList><Link to="/">Detalle de item</Link></DropdownList>
+                    <DropdownList><Link to="/item">Listado de items</Link></DropdownList>
                 </Dropdown>
             </ListItem>
             <ListItem>

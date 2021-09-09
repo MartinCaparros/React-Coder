@@ -37,6 +37,10 @@ export const Divider = styled.div`
     display: flex;
     justify-content:center;
 `;
+export const Divider2 = styled.div`
+    display: flex;
+    justify-content:center;
+`;
 export const ItemName = styled.p`
 
 `;
