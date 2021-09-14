@@ -1,13 +1,16 @@
 import { Container} from './styled';
 import  { NavBar }  from 'views/containers';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const Header = () => {
+
+    const {push} = useHistory()
+
     return(
         <Container>
-            <Link to="/"><h1>Home</h1></Link>
             <NavBar greeting="Usuario">
+                <h1 onClick={()=>push("/asd")}>Home</h1>
             </NavBar>
         </Container>
     )

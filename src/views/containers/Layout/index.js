@@ -1,19 +1,26 @@
-import { Container } from './styled';
 import React from 'react';
-import {
-    MainSection,
-    Header
-} from 'views/containers';
+import { ItemDetailContainer,ItemListContainer } from '..';
+import { Container, Content} from './styled';
+import { BrowserRouter,Switch,Route } from 'react-router-dom';
+import { Header } from '..';
+
 
 const Layout = () => {
-    return ( 
-        <div>
-            <Header/>
+
+    return (
+        <BrowserRouter>
             <Container>
+                <Header/>
+                <Content>
+                    <Switch>
+                        <Route exact path="/" component={ItemListContainer}/>
+                        <Route exact path="/categoria/:id" component={ItemListContainer}/>
+                        <Route exact path="/item" component={ItemDetailContainer}/>
+                    </Switch>
+                </Content>
             </Container>
-            <MainSection/>
-        </div>       
-    );
+        </BrowserRouter>
+    )
 }
- 
-export default Layout;
+
+export default Layout
