@@ -1,12 +1,5 @@
 import styled from 'styled-components';
 
-export const Container = styled.ul`
-    align-items: center;
-    display: flex;
-    list-style: none;
-    justify-content: flex-end;
-    width: 100%;
-`;
 
 export const ListItem = styled.li`
     padding: 10px;
@@ -27,5 +20,5 @@ export const ListLink = styled.a`
 export const Dropdown = styled.ul `
 `;
 export const DropdownList = styled.li `
-
+    cursor:pointer;
 `;
