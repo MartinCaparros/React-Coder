@@ -1,4 +1,4 @@
-import { Layout } from './views/containers';
+import { Layout } from './views/components';
 import { ThemeProvider } from 'styled-components';
 import theme from './theme';
 function App() {
