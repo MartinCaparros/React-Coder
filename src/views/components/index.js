@@ -4,8 +4,10 @@ import Header from './Header';
 import Layout from './Layout';
 import ItemListContainer from './ItemListContainer';
 import ItemDetailContainer from './ItemDetailContainer';
-import  CartContext from './CartContext';
+import CartContext from './CartContext';
 import Item from './Item';
+import ItemCount from './ItemCount';
+import ItemList from './ItemList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export {
@@ -17,4 +19,6 @@ export {
     ItemDetailContainer,
     CartContext,
     Item,
+    ItemCount,
+    ItemList,
 };

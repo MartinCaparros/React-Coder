@@ -33,11 +33,15 @@ const NavBar = ({greeting}) => {
                         </Button>
                     </InputGroup>
                     <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                        <NavDropdown.Item onClick={() => push("/item")}>Detalle de item</NavDropdown.Item>
-                        <NavDropdown.Item onClick={() => push("/")}>Listado de items</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => push("/products/:kids")}>Kids</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => push("/products/:sports")}>Deportivos</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => push("/products/:urban")}>Urbanos</NavDropdown.Item>
                     </NavDropdown>
-                    <Nav.Link href="#link">
+                    <Nav.Link>
                         Usuario
+                    </Nav.Link>
+                    <Nav.Link>
+                        Nosotros
                     </Nav.Link>
                     <Nav.Link href="#link">
                         <CartWidget></CartWidget>

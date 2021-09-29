@@ -1,7 +1,7 @@
 import React,{useState,useEffect,useContext} from "react";
 import { useHistory} from 'react-router-dom';
 import { ItemCount } from "views/components";
-import { contexto } from "./CartContext";
+import { contexto } from "../CartContext";
 import { useParams } from "react-router";
 
 const ItemDetailContainer = () => {
@@ -20,17 +20,7 @@ const ItemDetailContainer = () => {
     }
 
     useEffect(() =>{
-        const getItem = () => {
-            
-            setTimeout(()=>{
-                let item
-                if(id) {
-                    item = 
-                }
-                setItem(item)
-            }, 2000)
-        }
-        getItem()
+
     },[id])
 
     return (item.length===0 ? (

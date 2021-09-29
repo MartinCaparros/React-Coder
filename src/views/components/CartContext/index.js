@@ -5,8 +5,8 @@ export const contexto = createContext();
 const {Provider} = contexto;
 
 const CustomProvider = ({children}) => {
+    
     const [Carrito,setCarrito] = useState([])
-    console.log(Carrito)
 
     function addProducto(detalle,cantidad){
         let exist = Carrito.find( i => i.producto.id === detalle.id)

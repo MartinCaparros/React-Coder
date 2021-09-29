@@ -1,20 +1,8 @@
-import {useEffect,useState} from "react";
-import React from 'react';
-import ItemList from './ItemsList'
-import { useParams } from "react-router";
-import { firestore } from "../firebase";
+import {React, memo} from "react";
+import { Item } from "views/components";
+import { Container } from "./styled";
 
-const ItemListContainer = ()=>{
-
-    const {kids,sports,urban} = useParams();
-    const [products,setProducts] = useState([]);
-
-    useEffect(()=> {
-        
-
-    })
-
-
+const ItemList = memo((product)=>{
 
     return (product.length===0 ?(
         <div className="col text-center">
@@ -36,4 +24,4 @@ const ItemListContainer = ()=>{
 
 
 
-export default ItemListContainer;
+export default ItemList;
