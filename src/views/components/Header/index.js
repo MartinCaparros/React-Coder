@@ -8,7 +8,7 @@ const Header = () => {
 
     return(
         <NavBar greeting="Usuario">
-            <h1 onClick={()=>push("/asd")}>Home</h1>
+            <h1 onClick={()=>push("/")}>Home</h1>
         </NavBar>
     )
 }

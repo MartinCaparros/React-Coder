@@ -1,8 +1,7 @@
 import {React, memo} from "react";
 import { Item } from "views/components";
-import { Container } from "./styled";
 
-const ItemList = memo((product)=>{
+const ItemList = memo(({product})=>{
 
     return (product.length===0 ?(
         <div className="col text-center">

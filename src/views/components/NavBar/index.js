@@ -43,9 +43,9 @@ const NavBar = ({greeting}) => {
                     <Nav.Link>
                         Nosotros
                     </Nav.Link>
-                    <Nav.Link href="#link">
-                        <CartWidget></CartWidget>
-                    </Nav.Link>
+                    <li>
+                        <CartWidget onClick={()=> push("/cart")}></CartWidget>
+                    </li>
                 </Nav>
                 </Navbar.Collapse>
             </Container>

@@ -1,40 +1,41 @@
-import {createContext, useState } from "react";
+import {createContext, React , useState } from "react";
 
 export const contexto = createContext();
-
 const {Provider} = contexto;
 
 const CustomProvider = ({children}) => {
-    
-    const [Carrito,setCarrito] = useState([])
+    const [Cart,setCart] = useState([])
 
-    function addProducto(detalle,cantidad){
-        let exist = Carrito.find( i => i.producto.id === detalle.id)
+    function addProducto(product,quantity){
+        let exist = Cart.find( i => i.producto.id === producto.id)
         if(exist !== undefined){
-            for (const a of Carrito) {
-                if(a.producto.id === detalle.id){
-                    a.cantidad += cantidad
+            for (const a of Cart) {
+                if(a.product.id === product.id){
+                    a.quantity += quantity
                 }
             }
         }else{
-            let producto = {"item":detalle,"cantidad":cantidad}
-            setCarrito(Carrito=>[...Carrito, producto])
+            let selectedProducts = {"producto":product,"cantidad":quantity}
+            setCart(Cart => [...Cart, selectedProducts])
         }
     }
 
-    function removeProduct(id){
-        let item = Carrito.filter( i => i.item.id !== id)
-        setCarrito(item)
+    const removeProduct = (id) => {
+        let product = Cart.filter( i => i.product.id !== id)
+        setCart(product)
     }
+    const clear = () => setCart([])
 
-
-    function clear(){
-        setCarrito([])
+    const contexto = {
+        Cart,
+        addProducto,
+        removeProduct,
+        clear
     }
 
     return(
         <div>
-            <Provider value={{Carrito,addProducto,removeProduct,clear}}>
+            <Provider value={contexto}>
                 {children}
             </Provider>
         </div>
