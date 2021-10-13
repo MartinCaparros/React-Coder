@@ -1,15 +1,20 @@
 import { Layout } from './views/components';
 import { ThemeProvider } from 'styled-components';
+import {CustomProvider} from './views/components';
 import theme from './theme';
+
+
 function App() {
   return (
-    <ThemeProvider theme={ theme }>
+    <CustomProvider>
+        <ThemeProvider theme={ theme }>
 
-      <Layout>
+            <Layout>
 
-      </Layout>
+            </Layout>
 
-    </ThemeProvider>
+        </ThemeProvider>
+    </CustomProvider>
   );
 }
 

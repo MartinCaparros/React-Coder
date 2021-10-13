@@ -3,8 +3,11 @@ import { contexto } from '../CartContext';
 import { Container } from './styled.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { useHistory } from 'react-router';
 
 const CartWidget = () => {
+
+    const {push} = useHistory()
 
     const {Cart} = useContext(contexto);
     const [countCart,setCountCart] = useState(Cart.length);
@@ -19,7 +22,7 @@ const CartWidget = () => {
         return (
 
             <Container>
-                <div><FontAwesomeIcon icon={ faShoppingCart} />{countCart}</div>
+                <div><FontAwesomeIcon icon={ faShoppingCart} size="2x" onClick={()=> push("/cart")} />{countCart}</div>
             </Container>
 
         );

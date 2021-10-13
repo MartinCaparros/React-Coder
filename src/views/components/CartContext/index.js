@@ -4,13 +4,15 @@ export const contexto = createContext();
 const {Provider} = contexto;
 
 const CustomProvider = ({children}) => {
-    const [Cart,setCart] = useState([])
 
-    function addProducto(product,quantity){
-        let exist = Cart.find( i => i.producto.id === producto.id)
+    const [Cart,setCart] = useState([])
+    const addProduct = (product,quantity) => {
+
+        console.log(Cart)
+        let exist = Cart.find( i => i.producto.title === product.title)
         if(exist !== undefined){
             for (const a of Cart) {
-                if(a.product.id === product.id){
+                if(a.producto.title === product.title){
                     a.quantity += quantity
                 }
             }
@@ -21,14 +23,14 @@ const CustomProvider = ({children}) => {
     }
 
     const removeProduct = (id) => {
-        let product = Cart.filter( i => i.product.id !== id)
+        let product = Cart.filter( i => i.producto.id !== id)
         setCart(product)
     }
     const clear = () => setCart([])
 
     const contexto = {
         Cart,
-        addProducto,
+        addProduct,
         removeProduct,
         clear
     }

@@ -1,8 +1,8 @@
-import {useEffect,useState} from "react";
-import React from 'react';
-import ItemList from 'views/components';
+import React,{useEffect,useState} from "react";
+import { ItemList } from 'views/components';
 import { useParams } from "react-router";
-import { firestore } from "firebase";
+import { firestore } from "../../../firebase";
+import { Spinner } from "react-bootstrap";
 
 const ItemListContainer = ()=>{
 
@@ -10,7 +10,7 @@ const ItemListContainer = ()=>{
     const [products,setProducts] = useState([]);
 
     useEffect(()=> {
-        const collection = firestore.collection("productos");
+        const collection = firestore.collection("products");
         if(sports){
             const query = collection.where("sports","==",true).get();
             query
@@ -66,21 +66,16 @@ const ItemListContainer = ()=>{
         }
     },[urban,kids,sports]);
 
-    
 
 
-
-    return (product.length===0 ?(
+    return (products.length===0 ?(
         <div className="col text-center">
-            <p>Cargando...</p>
+            <Spinner animation="border" variant="primary" />
         </div>
-    ): (  
-        <Container>
-            <Item
-                product={product}
-            />
-        </Container>
-
+    ): (
+        <ItemList
+            products={products}
+        />
     ));
 };
 

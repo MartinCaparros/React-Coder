@@ -16,15 +16,15 @@ const ItemCount = ({stock,initial, onAdd}) => {
     }
 
     return (
-        <Container className="m-2">
-                    <Divider2>
-                        <Button onClick={substract}>-</Button>
-                        <QuantityDiv>{count}</QuantityDiv>
-                        <Button onClick={add}>+</Button>
-                    </Divider2>
-                    <div className="d-flex justify-content-center">
-                        <Button onClick={()=>onAdd(count)} variant="primary">Agregar al carrito</Button>
-                    </div>
+        <Container className="mb-2">
+            <Divider2 className="d-flex justify-content-center">
+                <Button onClick={substract}>-</Button>
+                <QuantityDiv>{count}</QuantityDiv>
+                <Button onClick={add}>+</Button>
+            </Divider2>
+            <div className="d-flex justify-content-center">
+                <Button onClick={()=>onAdd(count)} variant="primary">Agregar al carrito</Button>
+            </div>
         </Container>
     )
 };

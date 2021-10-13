@@ -1,10 +1,11 @@
 import CartWidget from './CartWidget';
 import Cart from './Cart';
-import NavBar from './NavBar';
+import NavigationBar from './NavBar';
 import Header from './Header';
 import Layout from './Layout';
 import ItemListContainer from './ItemListContainer';
 import ItemDetailContainer from './ItemDetailContainer';
+import CustomProvider from './CartContext';
 import CartContext from './CartContext';
 import Item from './Item';
 import ItemCount from './ItemCount';
@@ -15,10 +16,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export {
     CartWidget,
     Cart,
-    NavBar,
+    NavigationBar,
     Header,
     Layout,
     ItemListContainer,
+    CustomProvider,
     ItemDetailContainer,
     CartContext,
     Item,

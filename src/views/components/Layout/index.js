@@ -1,8 +1,9 @@
 import React from 'react';
-import { ItemDetailContainer,ItemListContainer } from '..';
-import { Container, Content} from './styled';
+import { Cart, ItemDetailContainer,ItemListContainer } from 'views/components';
+import { Container } from './styled';
 import { BrowserRouter,Switch,Route } from 'react-router-dom';
 import { Header } from '..';
+import {Row} from 'react-bootstrap';
 
 
 const Layout = () => {
@@ -11,13 +12,18 @@ const Layout = () => {
         <BrowserRouter>
             <Container>
                 <Header/>
-                <Content>
-                    <Switch>
-                        <Route exact path="/" component={ItemListContainer}/>
-                        <Route exact path="/categoria/:id" component={ItemListContainer}/>
-                        <Route exact path="/item" component={ItemDetailContainer}/>
-                    </Switch>
-                </Content>
+                <section>
+                    <Row>
+                        <Switch>
+                            <Route exact path="/" component={ItemListContainer}/>
+                            <Route exact path="/products/:kids" component={ItemListContainer}/>
+                            <Route exact path="/products/:sports" component={ItemListContainer}/>
+                            <Route exact path="/products/:urban" component={ItemListContainer}/>
+                            <Route exact path="/item/:id" component={ItemDetailContainer}/>
+                            <Route exact path="/cart" component={Cart} />
+                        </Switch>
+                    </Row>
+                </section>
             </Container>
         </BrowserRouter>
     )

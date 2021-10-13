@@ -1,25 +1,28 @@
 import {React, memo} from "react";
 import { Item } from "views/components";
+import {Row,Col,Spinner} from 'react-bootstrap';
 
-const ItemList = memo(({product})=>{
+const ItemList = memo(({products})=>{
+    
 
-    return (product.length===0 ?(
+    return (products.length === 0 ?(
         <div className="col text-center">
-            <p>Cargando...</p>
+            <Spinner animation="border" variant="primary" />
         </div>
-    ): (  
-        <Container>
-            {product.map(item=>
-                <div key={product.id}>
+    ): (
+        <Row>
+            {products.map(product=>
+
+                <Col sm={4}>
                     <Item
+                        key={product.id}
                         product={product}
                     />
-                </div>
+                </Col>
             )}
-        </Container>
-
+        </Row>
     ));
-}, (oldProps,newProps) => oldProps.producto.length === newProps.producto.length);
+}, (oldProps,newProps) => oldProps.products.length === newProps.products.length);
 
 
 
